@@ -38,7 +38,7 @@ class MentalomeController extends Controller
     }
 
     // Retrieve all the filtered data from the query
-    $filteredData = $query->get();
+    $filteredData = $query->get()->groupBy('Abbreviation');
 
     // Return the filtered data as JSON response
     return response()->json($filteredData, 200);
